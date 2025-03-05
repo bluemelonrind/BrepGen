@@ -43,6 +43,12 @@ Install OCCWL following the instruction [here](https://github.com/AutodeskAILab/
 If conda is stuck in "Solving environment..." there are two options to try:
 
 - Try using `mamba` as suggested in occwl's README.
+```
+conda install -n base mamba -c conda-forge
+...
+mamba install occwl -c lambouj -c conda-forge
+```
+Try these commands, and I succeed.
 
 - Install pythonOCC: https://github.com/tpaviot/pythonocc-core?tab=readme-ov-file#install-with-conda and occwl manually: `pip install git+https://github.com/AutodeskAILab/occwl`.
 
@@ -55,7 +61,7 @@ The faces, edges, and vertices need to be extracted from the STEP files.
 
 Process the B-reps (under ```data_process``` folder):
 
-    sh process.sh
+`sh process.sh`
 
 
 Remove repeated CAD models (under ```data_process``` folder, default is ```6 bit``` ):
