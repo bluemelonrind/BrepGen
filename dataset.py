@@ -93,6 +93,7 @@ def load_data(input_data, input_list, validate, args):
     data_classes = []
     for uid in data_list:
         try:
+            # input_data: data_process/abc_parsed
             path = os.path.join(input_data, str(math.floor(int(uid.split('.')[0])/10000)).zfill(4), uid)
             class_label = -1  # unconditional generation (abc/deepcad)
         except Exception:
