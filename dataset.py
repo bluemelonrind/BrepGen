@@ -268,6 +268,7 @@ class SurfPosData(torch.utils.data.Dataset):
         surf_pos = surf_pos[random_indices]
     
         # Padding
+        # Pads surf_pos to ensure it has self.max_face number of rows by repeating elements if necessary.
         surf_pos = pad_repeat(surf_pos, self.max_face)
         
         # Randomly shuffle the sequence
