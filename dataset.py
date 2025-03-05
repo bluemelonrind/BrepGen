@@ -106,7 +106,7 @@ def load_data(input_data, input_list, validate, args):
     loaded_data = []
     params = zip(data_paths, [args.max_face]*len(data_list), [args.max_edge]*len(data_list), 
                     [args.bbox_scaled]*len(data_list), [args.threshold]*len(data_list), data_classes)
-    # filter_data is to decide if to skip 判断该文件是否跳过
+    # filter_data is to decide if to skip 根据params，filter_data来判断data_paths是否跳过 ，return data_path, data_class
     convert_iter = Pool(os.cpu_count()).imap(filter_data, params) 
     for data_path, data_class in tqdm(convert_iter, total=len(data_list)):
         if data_path is not None:
@@ -116,6 +116,7 @@ def load_data(input_data, input_list, validate, args):
                 loaded_data.append((data_path,data_class)) 
 
     print(f'Processed {len(loaded_data)}/{len(data_list)}')
+    # loaded_data is just a list containing data_path (and data_class if it is furniture dataset)
     return loaded_data
 
 
