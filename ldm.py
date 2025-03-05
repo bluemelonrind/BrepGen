@@ -17,6 +17,7 @@ from trainer import *
 def run(args):
     # Initialize dataset and trainer
     if args.option == 'surfpos':
+        # set train_dataset to an instance of SurfPosData
         train_dataset = SurfPosData(args.data, args.list, validate=False, aug=args.data_aug, args=args)
         val_dataset = SurfPosData(args.data, args.list, validate=True, aug=False, args=args)
         ldm = SurfPosTrainer(args, train_dataset, val_dataset)
