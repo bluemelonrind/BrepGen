@@ -217,8 +217,10 @@ if __name__ == '__main__':
         OUTPUT = 'furniture_parsed'
     
     # Load all STEP files
-    if args.option == 'furniture':
+    if args.option == 'furniture':    
         step_dirs = load_furniture_step(args.input)
+        # return 如果 use_deepcad 为 True，step_dirs 将只包含满足条件的路径。
+        # 例如，如果 deepcad_uid 为 {'1234', '5678'}，则 step_dirs 可能包含类似 /path/to/root/abc_0000_step_v00/00001234 和 /path/to/root/abc_0000_step_v00/00005678 的路径。
     else:
         step_dirs = load_abc_step(args.input, args.option=='deepcad')
         step_dirs = step_dirs[args.interval*10000 : (args.interval+1)*10000]
