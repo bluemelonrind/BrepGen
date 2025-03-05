@@ -61,7 +61,7 @@ The faces, edges, and vertices need to be extracted from the STEP files.
 
 Process the B-reps (under ```data_process``` folder):
 
-`sh process.sh`
+    sh process.sh
 
 
 Remove repeated CAD models (under ```data_process``` folder, default is ```6 bit``` ):
