@@ -223,6 +223,7 @@ class SurfPosData(torch.utils.data.Dataset):
         # Inflate furniture x50 times for training
         if len(self.data)<2000 and not validate:
             self.data = self.data*50
+        # 由于没有指定返回值，所以默认返回 None
         return      
 
     def __len__(self):
