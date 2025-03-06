@@ -149,6 +149,7 @@ def load_abc_step(root_dir, use_deepcad):
         deepcad_uid = set([uid.split('/')[1] for uid in deepcad_data])
 
     # Create STEP file folder path (based on the default ABC STEP format)
+    # dirs_nested = [[f'{root_dir}/1abc_{str(i).zfill(4)}_step_v00']*10000 for i in range(100)]加了一个1
     dirs_nested = [[f'{root_dir}/abc_{str(i).zfill(4)}_step_v00']*10000 for i in range(100)]
     dirs = [item for sublist in dirs_nested for item in sublist]
     subdirs = [f'{str(i).zfill(8)}' for i in range(1000000)]
